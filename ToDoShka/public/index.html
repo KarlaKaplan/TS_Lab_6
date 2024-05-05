@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoShka</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+
+    <div id="header" class="header">
+        <h1>ToDoShka</h1>
+    </div>
+
+    <div class="tabs">
+        <button id="active-tab" class="active-tab">Активные</button>
+        <button id="completed-tab" class="completed-tab">Завершенные</button>
+        <button id="deleted-tab" class="deleted-tab">Удаленные</button>
+    </div>
+
+    <div class="task-info">
+        <span>Название</span>
+        <span>Подробное описание</span>
+        <span>Срок выполнения</span>
+        <span>Действия</span>
+    </div>
+
+    <div id="active-list" class="task-list"></div>
+    <div id="deleted-list" class="task-list"></div>
+    <div id="completed-list" class="task-list"></div>
+
+    <div class="footer">
+        <button id="add-task-button" class="add-task-button">Добавить</button>
+        <button id="sort-by-name" class="add-task-button">Сортировать по названию</button>
+        <button id="sort-by-due-date" class="add-task-button">Сортировать по сроку выполнения</button>
+        <input type="text" id="search-input" placeholder="Введите название...">
+        <button id="search-button" class="add-task-button">Найти</button>
+    </div>
+
+    <div id="add-task-popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <span>Название:</span>
+            <input type="text" id="new-task-popup">
+            <span>Подробное описание:</span>
+            <textarea id="task-description-popup"></textarea>
+            <span>Срок выполнения:</span>
+            <input type="date" id="task-due-date-popup">
+            <button id="confirm-add-task" onclick="addTaskFromPopup()">Подтвердить</button>
+            <button id="cancel-add-task" onclick="closeAddTaskPopup()">Отмена</button>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
